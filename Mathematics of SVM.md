@@ -135,7 +135,7 @@ $$
 <img src="https://github.com/anarinsk/public-images/blob/master/svm/svm_2.png?raw=true">
 </kbd></div>
 
-이제 $\cos \theta$를 벡터 $\bf x_{\rm svr} - \bf x _{\rm svl}$와 ${\mathbf w}$가 이루는 각이라고 생각하자. 이때 ${\mathbf w}$는 하이퍼플레인과 orthogonal하며 적절한 training sample 즉, 적절한 하나의  서포트 벡터를 지난다. 이때 $\cos \theta$는 다음과 같이 쉽게 정의된다.[^2]
+이제 $\cos \theta$를 벡터 ${\bf x}_{\rm svr} - {\bf x} _{\rm svl}$와 ${\mathbf w}$가 이루는 각이라고 생각하자. 이때 ${\mathbf w}$는 하이퍼플레인과 orthogonal하며 적절한 training sample 즉, 적절한 하나의  서포트 벡터를 지난다. 이때 $\cos \theta$는 다음과 같이 쉽게 정의된다.[^2]
 
 [^2]: 벡터의 방향에 대해서 약간 갸우뚱하는 분들이 있을지 모르겠다. $\cos \theta$를 제대로 정의하기 위해서는 $-(\bf x_{\rm svr} - \bf x_{\rm svl})$, $-{\mathbf w}$라고 쓰는 것이 맞을 것이다. 하지만, 둘의 닷 프로덕트를 구하면 서로 상쇄되어 아래 적은 것과 동일하다. 
 
@@ -357,6 +357,7 @@ $$
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzM1Mzk0ODQsOTI1Nzc5NTU2LC01MT
-M5NzEzNTYsLTEwNjU1OTA2MzQsLTM3NzE2MTMwOF19
+eyJoaXN0b3J5IjpbNjkxMDg3Mjg4LC0xNjMzNTM5NDg0LDkyNT
+c3OTU1NiwtNTEzOTcxMzU2LC0xMDY1NTkwNjM0LC0zNzcxNjEz
+MDhdfQ==
 -->
