@@ -94,8 +94,8 @@ $$
 $$
 h({\bf x})  = 
 \begin{cases}
-+1\hspace{3em} & \text{if} \hspace{1em} {\boldsymbol w}\cdot{\bf x} + b \geq 0 \\\\
--1 \hspace{3em} & \text{if} \hspace{1em} {\boldsymbol w}\cdot{\bf x} + b < 0
++1\hspace{3em} & \text{if} \hspace{1em} {\boldsymbol w} \cdot {\bf x} + b \geq 0 \\\\
+-1 \hspace{3em} & \text{if} \hspace{1em} {\boldsymbol w} \cdot {\bf x} + b < 0
 \end{cases}
 $$
 
@@ -357,6 +357,6 @@ $$
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxMzk3MTM1NiwtMTA2NTU5MDYzNCwtMz
-c3MTYxMzA4XX0=
+eyJoaXN0b3J5IjpbOTI1Nzc5NTU2LC01MTM5NzEzNTYsLTEwNj
+U1OTA2MzQsLTM3NzE2MTMwOF19
 -->
