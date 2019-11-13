@@ -111,25 +111,25 @@ $$
 
 [^1]: 내적이라고 번역되기도 하지만 여기서는 그냥 '닷 프로덕트'라고 쓰리고 하겠다. 
 
-즉, ${\bf x}_i$를 ${\boldsymbol w}$로 프로젝션을 한다면(projection of ${\bf x}_i$ on ${\bf w}$), 이는 
+즉, ${\bf x}_i$를 ${\boldsymbol w}$로 프로젝션을 한다면(projection of ${\bf x}_i$ on ${\boldsymbol w}$), 이는 
 
 $$
-{\mathrm Proj}_{\bf w} {\bf x}_i = \dfrac{{\bf w} \cdot {\bf x}_i }{\Vert \bf w \Vert}
+{\mathrm Proj}_{\boldsymbol w} {\bf x}_i = \dfrac{{\boldsymbol w} \cdot {\bf x}_i }{\Vert \bf w \Vert}
 $$
 
 닷 프로덕트의 부분이 시각적으로는 projection 결과 곱하기 $\Vert \bf w \Vert$로 나타난다. 즉, ${\bf x}_i$에서 $\bf w$를 향해 내린 선분이 프로젝션이고 이를 $\Vert \bf w \Vert$로 스케일링 한 $\bf w$ 위에서의 길이가 닷 프로덕트를 시각적으로 나타낸 것이다. 이 프로젝션의 길이에 따라서 해당 트레이닝 샘플이 어떤 것으로 분류될지에 관해서 파악할 수 있다. $\bf \Vert w \Vert$가 고정되어 있다고 하면, 프로젝션의 크기가 일정 숫자보다 크면 분류의 오른쪽에 작으면 분류의 왼쪽에 위치하는 것이다. 이를 아래와 같이 표시해보자. 
 
-$${\bf w} \cdot {\bf x}_{\mathrm r} + b \geq 1$$
+$${\boldsymbol w} \cdot {\bf x}_{\mathrm r} + b \geq 1$$
 
-$${\bf w} \cdot {\bf x}_{\mathrm l} + b \leq 1$$
+$${\boldsymbol w} \cdot {\bf x}_{\mathrm l} + b \leq 1$$
 
 프로젝션의 길이가 일정한 기준보다 길면 오른쪽에 짧으면 왼쪽에 위치한 것으로 분류할 수 있다. 이 조건을 $y_i$와 함께 나타내보자. 즉, 
 
 $$
-y_i ( {\bf w} \cdot {\bf x}_ i + b) - 1  \geq 0
+y_i ( {\boldsymbol w} \cdot {\bf x}_ i + b) - 1  \geq 0
 $$
 
-앞서 분류기에서 해당 값이 0보다 크면 $y_i ( {\bf w} \cdot {\bf x}_ i + b) - 1 \geq 0$가 성립한다. 반면, 해당 값이 0보다 작으면 음수를 곱하는 것이 되어 부등호가 바뀌게 되고, 이 경우 역시 위의 식이 성립한다. 
+앞서 분류기에서 해당 값이 0보다 크면 $y_i ( {\boldsymbol w} \cdot {\bf x}_ i + b) - 1 \geq 0$가 성립한다. 반면, 해당 값이 0보다 작으면 음수를 곱하는 것이 되어 부등호가 바뀌게 되고, 이 경우 역시 위의 식이 성립한다. 
 
 <div class='mycenter'><kbd>
 <img src="https://github.com/anarinsk/public-images/blob/master/svm/svm_2.png?raw=true">
@@ -357,5 +357,5 @@ $$
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1NDcyNzgzNywtMzc3MTYxMzA4XX0=
+eyJoaXN0b3J5IjpbLTEwNjU1OTA2MzQsLTM3NzE2MTMwOF19
 -->
