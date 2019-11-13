@@ -33,7 +33,7 @@ $$
 벡터 $\bf x$의 방향성 $\bf w$는 다음과 같이 정의할 수 있다.  
 
 $$
-{\bf w} = \left( \dfrac{x_1}{ \Vert \bf x \Vert }, \dfrac{x_2}{ \Vert \bf x \Vert } \right)
+{\boldsymbol w} = \left( \dfrac{x_1}{ \Vert \bf x \Vert }, \dfrac{x_2}{ \Vert \bf x \Vert } \right)
 $$
 
 그림으로 나타내보자. 
@@ -84,7 +84,7 @@ $n$ 차원  공간을 가를 수 있는 해당 공간의 차원보다 하나 낮
 ${\bf x} = (x_1, x_2)$의 벡터가 있다고 할 때, 하이퍼플레인은 벡터 $\bf w$와 $b$에 의해 정의된다. 즉, 
 
 $$
-{\bf w} \cdot {\bf x} + b = 0 
+{\boldsymbol w} \cdot {\bf x} + b = 0 
 $$
 
 ### Classifier 
@@ -94,8 +94,8 @@ $$
 $$
 h({\bf x})  = 
 \begin{cases}
-+1\hspace{3em} & \text{if} \hspace{1em} {\bf w}\cdot{\bf x} + b \geq 0 \\\\
--1 \hspace{3em} & \text{if} \hspace{1em} {\bf w}\cdot{\bf x} + b < 0
++1\hspace{3em} & \text{if} \hspace{1em} {\boldsymbol w}\cdot{\bf x} + b \geq 0 \\\\
+-1 \hspace{3em} & \text{if} \hspace{1em} {\boldsymbol w}\cdot{\bf x} + b < 0
 \end{cases}
 $$
 
@@ -107,11 +107,11 @@ $$
 <img src="https://github.com/anarinsk/public-images/blob/master/svm/svm_1.png?raw=true ">
 </kbd></div>
 
-어떤 원점을 기준으로  training example까지의 벡터를 ${\bf x}_i$라고 하자. 이때 둘을 가르는 하이퍼플레인이 있을 때 이와 직교하는 벡터 (orthogonal vector) ${\bf w}$를 생각해보자. 왜 orthogonal해야 하는가? 잠시 후 그 이유를 알 수 있다. 하이퍼플레인은 기본적으로는 두 벡터 사이의 닷 프로덕트다[^1]. 닷 프로덕트를 그림으로 나타낼 수 있는 방법은 이를 projection으로 생각해보는 것이다. 
+어떤 원점을 기준으로  training example까지의 벡터를 ${\bf x}_i$라고 하자. 이때 둘을 가르는 하이퍼플레인이 있을 때 이와 직교하는 벡터 (orthogonal vector) ${\boldsymbol w}$를 생각해보자. 왜 orthogonal해야 하는가? 잠시 후 그 이유를 알 수 있다. 하이퍼플레인은 기본적으로는 두 벡터 사이의 닷 프로덕트다[^1]. 닷 프로덕트를 그림으로 나타낼 수 있는 방법은 이를 projection으로 생각해보는 것이다. 
 
 [^1]: 내적이라고 번역되기도 하지만 여기서는 그냥 '닷 프로덕트'라고 쓰리고 하겠다. 
 
-즉, ${\bf x}_i$를 ${\bf w}$로 프로젝션을 한다면(projection of ${\bf x}_i$ on ${\bf w}$), 이는 
+즉, ${\bf x}_i$를 ${\boldsymbol w}$로 프로젝션을 한다면(projection of ${\bf x}_i$ on ${\bf w}$), 이는 
 
 $$
 {\mathrm Proj}_{\bf w} {\bf x}_i = \dfrac{{\bf w} \cdot {\bf x}_i }{\Vert \bf w \Vert}
@@ -357,5 +357,5 @@ $$
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjcyOTI3NzksLTM3NzE2MTMwOF19
+eyJoaXN0b3J5IjpbMTg1NDcyNzgzNywtMzc3MTYxMzA4XX0=
 -->
