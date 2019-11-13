@@ -44,7 +44,7 @@ $$
 
 이는 다음과 같이 삼각함수로 표시할 수 있다. 
 $$
-{\bm w} = \left(  \cos~\theta, \cos~\alpha  \right)
+{\boldsymbol w} = \left(  \cos~\theta, \cos~\alpha  \right)
 $$
 
 ### Dot product (inner product) 
@@ -357,5 +357,5 @@ $$
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4MDgzMTU1NSwtMzc3MTYxMzA4XX0=
+eyJoaXN0b3J5IjpbMjcyOTI3NzksLTM3NzE2MTMwOF19
 -->
