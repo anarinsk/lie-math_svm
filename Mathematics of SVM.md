@@ -302,7 +302,7 @@ $$
 제약을 약간 풀어주는 $\zeta$를 도입하여 최적화 문제를 정식화하면 아래와 같다. 
 
 $$
-\min_{ \mathbf{w}, b, {\boldsymbol \zeta}} \dfrac{1}{2} \Vert \mathbf{w} \Vert^2 + C \sum_{i=1}^m \zeta_i~\text{s.t}~ y_i ( \mathbf{w} \cdot {\bf x}_i + b) \geq 1 - \zeta_i~\text{for}~ i = 1,2,\dotsc, m
+\min_{\mathbf{w}, b, {\boldsymbol \zeta}} \dfrac{1}{2} \Vert \mathbf{w} \Vert^2 + C \sum_{i=1}^m \zeta_i~\text{s.t}~ y_i ( \mathbf{w} \cdot {\bf x}_i + b) \geq 1 - \zeta_i~\text{for}~ i = 1,2,\dotsc, m
 $$
 
 문제를 풀면 
@@ -357,6 +357,6 @@ $$
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAyMDg3ODEzNSwtNjI3OTA5NjMsLTQ5NT
-g1MzIyMV19
+eyJoaXN0b3J5IjpbLTExNzI5MjQ5NTEsLTYyNzkwOTYzLC00OT
+U4NTMyMjFdfQ==
 -->
