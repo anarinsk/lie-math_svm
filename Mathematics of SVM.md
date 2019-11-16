@@ -107,14 +107,14 @@ $$
   <img src="https://github.com/anarinsk/public-images/blob/master/svm/svm_1.png?raw=true" width="450">
 </kbd></p>
 
-어떤 원점을 기준으로  training example까지의 벡터를 ${\bf x}_i$라고 하자. 이때 둘을 가르는 하이퍼플레인이 있을 때 이와 직교하는 벡터 (orthogonal vector) ${\mathbf w}$를 생각해보자. 왜 orthogonal해야 하는가? 잠시 후 그 이유를 알 수 있다. 하이퍼플레인은 기본적으로는 두 벡터 사이의 닷 프로덕트다[^1]. 닷 프로덕트를 그림으로 나타낼 수 있는 방법은 이를 projection으로 생각해보는 것이다. 
+어떤 원점을 기준으로  training example까지의 벡터를 ${\bf x}_i$라고 하자. 이때 둘을 가르는 하이퍼플레인이 있을 때 이와 직교하는 벡터 (orthogonal vector) $\mathbf{w} $를 생각해보자. 왜 orthogonal해야 하는가? 잠시 후 그 이유를 알 수 있다. 하이퍼플레인은 기본적으로는 두 벡터 사이의 닷 프로덕트다[^1]. 닷 프로덕트를 그림으로 나타낼 수 있는 방법은 이를 projection으로 생각해보는 것이다. 
 
 [^1]: 내적이라고 번역되기도 하지만 여기서는 그냥 '닷 프로덕트'라고 쓰리고 하겠다. 
 
-즉, ${\bf x}_i$를 ${\mathbf w}$로 프로젝션을 한다면(projection of ${\bf x}_i$ on ${\mathbf w}$), 이는 
+즉, ${\bf x}_i$를 $\mathbf{w} $로 프로젝션을 한다면(projection of ${\bf x}_i$ on $\mathbf{w} $), 이는 
 
 $$
-\text{Proj}_\mathbf{w} {\bf x}_i = \dfrac{{\mathbf w}\cdot{\bf x}_i}{\Vert \bf w \Vert}
+\text{Proj}_\mathbf{w} {\bf x}_i = \dfrac{\mathbf{w} \cdot{\bf x}_i}{\Vert \bf w \Vert}
 $$
 
 닷 프로덕트의 부분이 시각적으로는 projection 결과 곱하기 $\Vert \bf w \Vert$로 나타난다. 즉, ${\bf x}_i$에서 $\bf w$를 향해 내린 선분이 프로젝션이고 이를 $\Vert \bf w \Vert$로 스케일링 한 $\bf w$ 위에서의 길이가 닷 프로덕트를 시각적으로 나타낸 것이다. 이 프로젝션의 길이에 따라서 해당 트레이닝 샘플이 어떤 것으로 분류될지에 관해서 파악할 수 있다. $\bf \Vert w \Vert$가 고정되어 있다고 하면, 프로젝션의 크기가 일정 숫자보다 크면 분류의 오른쪽에 작으면 분류의 왼쪽에 위치하는 것이다. 이를 아래와 같이 표시해보자. 
@@ -190,13 +190,13 @@ $\mathbf{w}$와 $b$로 정의되는 하이퍼플레인이 모든 트레이닝 �
 표준화를 위해서 $\Vert \bf w \Vert$로 목적함수와 제약을 나누자. 
 
 $$
-\max_{{\mathbf w}, b} M\hspace{1em}\text{s.t.}\hspace{1em}\gamma_i \geq M\hspace{1em}\text{for}\hspace{1em}i = 1,\dotsc, m
+\max_{\mathbf{w} , b} M\hspace{1em}\text{s.t.}\hspace{1em}\gamma_i \geq M\hspace{1em}\text{for}\hspace{1em}i = 1,\dotsc, m
 $$
 
 where 
 
 $$
-\gamma_i = y_i \left( \dfrac{{\mathbf w}}{\Vert \mathbf{w} \Vert} \cdot {\bf x}_i + \dfrac{b}{\Vert \mathbf{w} \Vert} \right)
+\gamma_i = y_i \left( \dfrac{\mathbf{w} }{\Vert \mathbf{w} \Vert} \cdot {\bf x}_i + \dfrac{b}{\Vert \mathbf{w} \Vert} \right)
 $$
 
 $$
@@ -206,21 +206,21 @@ $$
 표준화된 펑셔널 마진을 최대화하되, 트레이닝 샘플들이 이것보다 커야 한다는 조건(최소화)이 제약으로 들어간다. 즉, 아래의 식은 최소화 제약 하에서 $F$를 최대화한다는 이중 최적화 과정을  보여 준다. 
 
 $$
-\max_{{\mathbf w}, b} \dfrac{F}{\Vert w \Vert}\hspace{1em}\text{s.t.}\hspace{1em}f_i \geq F \hspace{1em}\text{for}\hspace{1em}i = 1,2, \dotsc, m
+\max_{\mathbf{w} , b} \dfrac{F}{\Vert w \Vert}\hspace{1em}\text{s.t.}\hspace{1em}f_i \geq F \hspace{1em}\text{for}\hspace{1em}i = 1,2, \dotsc, m
 $$
 
 위 극대화 문제에서 모든 변수는 상대값으로 정의할 수 있으므로 $F$를 1로 제한해도 해는 바뀌지 않는다. 그리고 아래와 같은 차례로 정식화할 수 있다. 
 
 $$
-\max_{{\mathbf w}, b} \dfrac{1}{\Vert w \Vert}\hspace{1em}\text{s.t.}\hspace{1em}f_i \geq 1\hspace{1em}\text{for}\hspace{1em}i = 1,2, \dotsc, m
+\max_{\mathbf{w} , b} \dfrac{1}{\Vert w \Vert}\hspace{1em}\text{s.t.}\hspace{1em}f_i \geq 1\hspace{1em}\text{for}\hspace{1em}i = 1,2, \dotsc, m
 $$
 
 $$
-\min_{{\mathbf w}, b} {\Vert w \Vert}\hspace{1em}\text{s.t.}\hspace{1em}f_i \geq 1\hspace{1em}\text{for}\hspace{1em}i = 1,2, \dotsc, m
+\min_{\mathbf{w} , b} {\Vert w \Vert}\hspace{1em}\text{s.t.}\hspace{1em}f_i \geq 1\hspace{1em}\text{for}\hspace{1em}i = 1,2, \dotsc, m
 $$
 
 $$
-\min_{{\mathbf w}, b} \dfrac{1}{2}{\Vert w \Vert}^2\hspace{1em}\text{s.t.}\hspace{1em}f_i \geq 1\hspace{1em}\text{for}\hspace{1em}i = 1,2, \dotsc, m
+\min_{\mathbf{w} , b} \dfrac{1}{2}{\Vert w \Vert}^2\hspace{1em}\text{s.t.}\hspace{1em}f_i \geq 1\hspace{1em}\text{for}\hspace{1em}i = 1,2, \dotsc, m
 $$
  
 ## Optimization by Wolfe duality 
@@ -228,7 +228,7 @@ $$
 제약 하의 극대화 문제이므로 라그랑주 최적화로 바뀌서 볼 수 있다. 다음과 같이 라그랑주 방정식을 정의하자. 
 
 $$
-{\mathcal L}({\mathbf w}, b, {\boldsymbol \alpha}) = \frac{1}{2} \mathbf{w} \cdot \mathbf{w} - \sum_{i=1}^m \alpha_i \left [ y_i (\mathbf{w} \cdot {\bf x}  + b) -1 \right]
+{\mathcal L}(\mathbf{w} , b, {\boldsymbol \alpha}) = \frac{1}{2} \mathbf{w} \cdot \mathbf{w} - \sum_{i=1}^m \alpha_i \left [ y_i (\mathbf{w} \cdot {\bf x}  + b) -1 \right]
 $$
 
 여기서 벡터 $\boldsymbol \alpha$는 라그랑주 최적화의 라그랑주 승수로 제약식을 반영하는 부분이다.  
@@ -357,6 +357,6 @@ $$
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA3MzUxMjQ3OSwtNjI3OTA5NjMsLTQ5NT
+eyJoaXN0b3J5IjpbMjAzMDE1MjUxNSwtNjI3OTA5NjMsLTQ5NT
 g1MzIyMV19
 -->
