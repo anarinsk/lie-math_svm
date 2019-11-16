@@ -33,7 +33,7 @@ $$
 벡터 $\bf x$의 방향성 $\bf w$는 다음과 같이 정의할 수 있다.  
 
 $$
-{\mathbf w} = \left( \dfrac{x_1}{ \Vert \bf x \Vert }, \dfrac{x_2}{ \Vert \bf x \Vert } \right)
+\mathbf{w} = \left( \dfrac{x_1}{ \Vert \bf x \Vert }, \dfrac{x_2}{ \Vert \bf x \Vert } \right)
 $$
 
 그림으로 나타내보자. 
@@ -44,7 +44,7 @@ $$
 
 이는 다음과 같이 삼각함수로 표시할 수 있다. 
 $$
-{\mathbf w} = \left(  \cos~\theta, \cos~\alpha  \right)
+\mathbf{w} = \left(  \cos~\theta, \cos~\alpha  \right)
 $$
 
 ### Dot product (inner product) 
@@ -84,7 +84,7 @@ $n$ 차원  공간을 가를 수 있는 해당 공간의 차원보다 하나 낮
 ${\bf x} = (x_1, x_2)$의 벡터가 있다고 할 때, 하이퍼플레인은 벡터 $\bf w$와 $b$에 의해 정의된다. 즉, 
 
 $$
-{\mathbf w} \cdot {\bf x} + b = 0 
+\mathbf{w} \cdot {\bf x} + b = 0 
 $$
 
 ### Classifier 
@@ -94,8 +94,8 @@ $$
 $$
 h({\bf x})  = 
 \begin{cases}
-+1\hspace{3em} & \text{if} \hspace{1em} {\mathbf w} \cdot {\bf x} + b \geq 0 \\\\
--1 \hspace{3em} & \text{if} \hspace{1em} {\mathbf w} \cdot {\bf x} + b < 0
++1\hspace{3em} & \text{if} \hspace{1em} \mathbf{w} \cdot {\bf x} + b \geq 0 \\\\
+-1 \hspace{3em} & \text{if} \hspace{1em} \mathbf{w} \cdot {\bf x} + b < 0
 \end{cases}
 $$
 
@@ -114,22 +114,22 @@ $$
 즉, ${\bf x}_i$를 ${\mathbf w}$로 프로젝션을 한다면(projection of ${\bf x}_i$ on ${\mathbf w}$), 이는 
 
 $$
-\text{Proj}_{\mathbf w} {\bf x}_i = \dfrac{{\mathbf w}\cdot{\bf x}_i}{\Vert \bf w \Vert}
+\text{Proj}_\mathbf{w} {\bf x}_i = \dfrac{{\mathbf w}\cdot{\bf x}_i}{\Vert \bf w \Vert}
 $$
 
 닷 프로덕트의 부분이 시각적으로는 projection 결과 곱하기 $\Vert \bf w \Vert$로 나타난다. 즉, ${\bf x}_i$에서 $\bf w$를 향해 내린 선분이 프로젝션이고 이를 $\Vert \bf w \Vert$로 스케일링 한 $\bf w$ 위에서의 길이가 닷 프로덕트를 시각적으로 나타낸 것이다. 이 프로젝션의 길이에 따라서 해당 트레이닝 샘플이 어떤 것으로 분류될지에 관해서 파악할 수 있다. $\bf \Vert w \Vert$가 고정되어 있다고 하면, 프로젝션의 크기가 일정 숫자보다 크면 분류의 오른쪽에 작으면 분류의 왼쪽에 위치하는 것이다. 이를 아래와 같이 표시해보자. 
 
-$${\mathbf w} \cdot {\bf x}_{\mathrm r} + b \geq 1$$
+$$\mathbf{w} \cdot {\bf x}_{\mathrm r} + b \geq 1$$
 
-$${\mathbf w} \cdot {\bf x}_{\mathrm l} + b \leq 1$$
+$$\mathbf{w} \cdot {\bf x}_{\mathrm l} + b \leq 1$$
 
 프로젝션의 길이가 일정한 기준보다 길면 오른쪽에 짧으면 왼쪽에 위치한 것으로 분류할 수 있다. 이 조건을 $y_i$와 함께 나타내보자. 즉, 
 
 $$
-y_i ( {\mathbf w} \cdot {\bf x}_ i + b) - 1  \geq 0
+y_i ( \mathbf{w} \cdot {\bf x}_ i + b) - 1  \geq 0
 $$
 
-앞서 분류기에서 해당 값이 0보다 크면 $y_i ( {\mathbf w} \cdot {\bf x}_ i + b) - 1 \geq 0$가 성립한다. 반면, 해당 값이 0보다 작으면 음수를 곱하는 것이 되어 부등호가 바뀌게 되고, 이 경우 역시 위의 식이 성립한다. 
+앞서 분류기에서 해당 값이 0보다 크면 $y_i ( \mathbf{w} \cdot {\bf x}_ i + b) - 1 \geq 0$가 성립한다. 반면, 해당 값이 0보다 작으면 음수를 곱하는 것이 되어 부등호가 바뀌게 되고, 이 경우 역시 위의 식이 성립한다. 
 
 <p align="center"><kbd>
   <img src="https://github.com/anarinsk/public-images/blob/master/svm/svm_2.png?raw=true" width="450">
@@ -139,26 +139,26 @@ $$
 
 [^2]: 벡터의 방향에 대해서 약간 갸우뚱하는 분들이 있을지 모르겠다. $\cos \theta$를 제대로 정의하기 위해서는 $-({\bf x}_{\rm svr} - {\bf x}_{\rm svl})$, $-{\mathbf w}$라고 쓰는 것이 맞을 것이다. 하지만, 둘의 닷 프로덕트를 구하면 서로 상쇄되어 아래 적은 것과 동일하다. 
 
-$$\cos \theta = \dfrac{({\bf x} _ {\rm svr} - {\bf x} _ {\rm svl}) \cdot \bf w}{\Vert {\bf x} _ {\rm svr} - {\bf x} _ {\rm svl} \Vert \Vert {\mathbf w} \Vert}$$
+$$\cos \theta = \dfrac{({\bf x} _ {\rm svr} - {\bf x} _ {\rm svl}) \cdot \bf w}{\Vert {\bf x} _ {\rm svr} - {\bf x} _ {\rm svl} \Vert \Vert \mathbf{w} \Vert}$$
 
 한편, 하이퍼플레인과 평행하면서  서포트 벡터를 지나가는 하이퍼플레인의 거리 $\Delta_{\bf x}$는 다음과 같다. 
 
-$$\dfrac{ \Delta _ {\bf x} }{\Vert {\bf x} _ {\rm svr} -  {\bf x} _ {\rm svl} \Vert } = \cos \theta = \dfrac{({\bf x} _ {\rm svr} - {\bf x} _ {\rm svl}) \cdot \bf w}{\Vert {\bf x} _ {\rm svr} - {\bf x} _ {\rm svl} \Vert \Vert {\mathbf w} \Vert}$$
+$$\dfrac{ \Delta _ {\bf x} }{\Vert {\bf x} _ {\rm svr} -  {\bf x} _ {\rm svl} \Vert } = \cos \theta = \dfrac{({\bf x} _ {\rm svr} - {\bf x} _ {\rm svl}) \cdot \bf w}{\Vert {\bf x} _ {\rm svr} - {\bf x} _ {\rm svl} \Vert \Vert \mathbf{w} \Vert}$$
 
 따라서 
 
-$$\Delta _ {\bf x}  = \dfrac{({\bf x} _ {\rm svr} - {\bf x} _ {\rm svl}) \cdot \bf w}{\Vert {\mathbf w} \Vert}$$
+$$\Delta _ {\bf x}  = \dfrac{({\bf x} _ {\rm svr} - {\bf x} _ {\rm svl}) \cdot \bf w}{\Vert \mathbf{w} \Vert}$$
 
-$y_i ( {\mathbf w} \cdot {\bf x}_ i + b) - 1  = 0$의 양변에 $y_i$를 곱하면, $y_i^2 ( {\mathbf w} \cdot {\bf x}_ i + b)  = y_i$가 된다. $y_i^2 =1$이므로, 
+$y_i ( \mathbf{w} \cdot {\bf x}_ i + b) - 1  = 0$의 양변에 $y_i$를 곱하면, $y_i^2 ( \mathbf{w} \cdot {\bf x}_ i + b)  = y_i$가 된다. $y_i^2 =1$이므로, 
 
 $$
 \begin{aligned}
-{\bf x}_ {\rm svr} \cdot {\mathbf w} + b  & = 1  \\
-{\bf x}_ {\rm svl}  \cdot {\mathbf w} + b  & = -1
+{\bf x}_ {\rm svr} \cdot \mathbf{w} + b  & = 1  \\
+{\bf x}_ {\rm svl}  \cdot \mathbf{w} + b  & = -1
 \end{aligned}
 $$
 
-여기서  $({\bf x} _ {\rm svr} - {\bf x} _ {\rm svl}) \cdot {\mathbf w} = 2$를 쉽게 도출할 수 있다. 결론적으로 두 서포트 벡터 사이의 거리를 최대화하는 문제는 $\Vert \bf w \Vert$를 최소화하는 문제와 같다. 
+여기서  $({\bf x} _ {\rm svr} - {\bf x} _ {\rm svl}) \cdot \mathbf{w} = 2$를 쉽게 도출할 수 있다. 결론적으로 두 서포트 벡터 사이의 거리를 최대화하는 문제는 $\Vert \bf w \Vert$를 최소화하는 문제와 같다. 
 
 # Optimization for SVM
 
@@ -166,7 +166,7 @@ $$
 
 ### Defining functional margin
 
-$f_i = y_i({\mathbf w} \cdot {\bf x}_i + b)$가 있다고 하자. 이때 분류가 제대로 이루어졌다면, $f_i$의 부호는 언제나 양수다. 위의 분류의 정의에 따르면 그렇다. 데이터 셋 $D$의 정의는 다음과 같다. 
+$f_i = y_i(\mathbf{w} \cdot {\bf x}_i + b)$가 있다고 하자. 이때 분류가 제대로 이루어졌다면, $f_i$의 부호는 언제나 양수다. 위의 분류의 정의에 따르면 그렇다. 데이터 셋 $D$의 정의는 다음과 같다. 
 
 $$
 D = \left\lbrace ({\bf x}_i, y_i) \mid {\bf x}_ i \in \mathbb R^n,~y_ i \in \lbrace -1, 1\rbrace  \right\rbrace_{i=1}^m
@@ -175,7 +175,7 @@ $$
 펑셔널 마진(functional margin)이라고 불리는 $F$ 는 다음과 같다. 
 
 $$
-F = \min_{i = 1, \dotsc, m} y_i( {\mathbf w} \cdot {\bf x} _i + b )
+F = \min_{i = 1, \dotsc, m} y_i( \mathbf{w} \cdot {\bf x} _i + b )
 $$
 
 ${\mathbf w}$와 $b$로 정의되는 하이퍼플레인이 모든 트레이닝 셋을 잘 분류했다면, $f_i > 0$가 성립한다. 이 $f_i$ 중 가장 작은 값이 functional margin이다. 그리고 두 번째로 서로 다른 하이퍼플레인 중에서 가장 큰 $F$를 지니는 하이퍼플레인이 최적이 하이퍼플레인이다. 
@@ -196,7 +196,7 @@ $$
 where 
 
 $$
-\gamma_i = y_i \left( \dfrac{{\mathbf w}}{\Vert {\mathbf w} \Vert} \cdot {\bf x}_i + \dfrac{b}{\Vert {\mathbf w} \Vert} \right)
+\gamma_i = y_i \left( \dfrac{{\mathbf w}}{\Vert \mathbf{w} \Vert} \cdot {\bf x}_i + \dfrac{b}{\Vert \mathbf{w} \Vert} \right)
 $$
 
 $$
@@ -228,7 +228,7 @@ $$
 제약 하의 극대화 문제이므로 라그랑주 최적화로 바뀌서 볼 수 있다. 다음과 같이 라그랑주 방정식을 정의하자. 
 
 $$
-{\mathcal L}({\mathbf w}, b, {\boldsymbol \alpha}) = \frac{1}{2} {\mathbf w} \cdot {\mathbf w} - \sum_{i=1}^m \alpha_i \left [ y_i ({\mathbf w} \cdot {\bf x}  + b) -1 \right]
+{\mathcal L}({\mathbf w}, b, {\boldsymbol \alpha}) = \frac{1}{2} \mathbf{w} \cdot \mathbf{w} - \sum_{i=1}^m \alpha_i \left [ y_i (\mathbf{w} \cdot {\bf x}  + b) -1 \right]
 $$
 
 여기서 벡터 $\boldsymbol \alpha$는 라그랑주 최적화의 라그랑주 승수로 제약식을 반영하는 부분이다.  
@@ -236,7 +236,7 @@ $$
 
 $$
 \begin{aligned}
-\nabla_{\mathbf w} {\mathcal L}({\mathbf w}, b, {\boldsymbol \alpha}) =& {\mathbf w} - \sum_{i}^{m} \alpha_i y_i x_i = 0 \\\\
+\nabla_\mathbf{w} {\mathcal L}({\mathbf w}, b, {\boldsymbol \alpha}) =& \mathbf{w} - \sum_{i}^{m} \alpha_i y_i x_i = 0 \\\\
 \nabla_{b} {\mathcal L}({\mathbf w}, b, {\boldsymbol \alpha}) =& - \sum_{i}^{m} \alpha_i y_i = 0
 \end{aligned}
 $$
@@ -250,41 +250,41 @@ $$
 이제 문제는 $\boldsymbol \alpha$에 관해서 극대화 문제를 푸는 것으로 바뀐다. 즉, 
 
 $$
-\max_{\boldsymbol \alpha} W( {\boldsymbol \alpha} )\hspace{1em}\text{s.t.}\hspace{1em}{\alpha_i} \geq 0, \sum_{i=1}^m \alpha_i { \left( y_i ( {\mathbf w} \cdot {\bf x}^* + b) -1 \right)} = 0
+\max_{\boldsymbol \alpha} W( {\boldsymbol \alpha} )\hspace{1em}\text{s.t.}\hspace{1em}{\alpha_i} \geq 0, \sum_{i=1}^m \alpha_i { \left( y_i ( \mathbf{w} \cdot {\bf x}^* + b) -1 \right)} = 0
 $$
 
 제약 부분이 부등식이므로 KKT 조건에 따라서 풀면 된다. 
 
 $$
-\alpha_i \left[ y_i ({\mathbf w} \cdot {\bf x}^* + b) -1 \right] = 0
+\alpha_i \left[ y_i (\mathbf{w} \cdot {\bf x}^* + b) -1 \right] = 0
 $$
 
-KKT 조건이란 부등식 제약을 푸는 테크닉이다. 즉, $\alpha_i >0$의 제약이 유효하다면 제약을 만족시키기 위해서는 $y_i ({\mathbf w} \cdot {\bf x}^* + b) -1 = 0$이 만족해야 한다. 이렇게 제약이 걸리는 경우에 위치한 $x^*$가 바로 '서포트 벡터'다. 반면, $\alpha_i =0$는 제약이 등호로 걸릴 필요가 없는 트레이닝 셋의 관찰들이다. 이들은 분류 하이퍼플레인까지의 길이가 서포트 벡터의 길이보다 크다.  
+KKT 조건이란 부등식 제약을 푸는 테크닉이다. 즉, $\alpha_i >0$의 제약이 유효하다면 제약을 만족시키기 위해서는 $y_i (\mathbf{w} \cdot {\bf x}^* + b) -1 = 0$이 만족해야 한다. 이렇게 제약이 걸리는 경우에 위치한 $x^*$가 바로 '서포트 벡터'다. 반면, $\alpha_i =0$는 제약이 등호로 걸릴 필요가 없는 트레이닝 셋의 관찰들이다. 이들은 분류 하이퍼플레인까지의 길이가 서포트 벡터의 길이보다 크다.  
 
 ## Compute $\bf w$  and $b$
 
 $\bf w$ 의 경우 1계 조건에서 쉽게 얻을 수 있다. 
 
 $$
-{\mathbf w} - \sum_{i=1}^m \alpha_i y_i {\bf x} _i = 0 
+\mathbf{w} - \sum_{i=1}^m \alpha_i y_i {\bf x} _i = 0 
 $$
 
 한편, $b$의 경우 서포트 벡터의 경우 위에서 본 것 같이 제약 식의 등호가 성립한다. 즉, 서포트 벡터를 $x^*$라고 할 때, 
 
 $$
-y_i ({\mathbf w} \cdot {\bf x}^* + b) -1 = 0
+y_i (\mathbf{w} \cdot {\bf x}^* + b) -1 = 0
 $$
 
 * 양변에 $y_i$를 곱하면, $y_i^2 = 1$이므로, 
 
 $$
-b = y_i - {\mathbf w} \cdot {\bf x}^*
+b = y_i - \mathbf{w} \cdot {\bf x}^*
 $$
 
 * 서포트 벡터가 S개 존재할 경우라면, 
 
 $$
-b = \dfrac{1}{S} \sum_{i=1}^S \left( y_i - {\mathbf w} \cdot {\bf x}^*_i \right)
+b = \dfrac{1}{S} \sum_{i=1}^S \left( y_i - \mathbf{w} \cdot {\bf x}^*_i \right)
 $$
 
 ## Limitation 
@@ -302,7 +302,7 @@ $$
 제약을 약간 풀어주는 $\zeta$를 도입하여 최적화 문제를 정식화하면 아래와 같다. 
 
 $$
-\min_{{\mathbf w}, b, {\boldsymbol \zeta}} \dfrac{1}{2} \Vert {\mathbf w} \Vert^2 + C \sum_{i=1}^m \zeta_i~\text{s.t}~ y_i ( {\mathbf w} \cdot {\bf x}_i + b) \geq 1 - \zeta_i~\text{for}~ i = 1,2,\dotsc, m
+\min_{{\mathbf w}, b, {\boldsymbol \zeta}} \dfrac{1}{2} \Vert \mathbf{w} \Vert^2 + C \sum_{i=1}^m \zeta_i~\text{s.t}~ y_i ( \mathbf{w} \cdot {\bf x}_i + b) \geq 1 - \zeta_i~\text{for}~ i = 1,2,\dotsc, m
 $$
 
 문제를 풀면 
@@ -357,5 +357,5 @@ $$
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NTg1MzIyMV19
+eyJoaXN0b3J5IjpbLTYyNzkwOTYzLC00OTU4NTMyMjFdfQ==
 -->
