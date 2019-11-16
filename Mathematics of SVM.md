@@ -135,9 +135,9 @@ $$
   <img src="https://github.com/anarinsk/public-images/blob/master/svm/svm_2.png?raw=true" width="450">
 </kbd></p>
 
-이제 $\cos \theta$를 벡터 ${\bf x}_{\rm svr} - {\bf x} _{\rm svl}$와 ${\mathbf w}$가 이루는 각이라고 생각하자. 이때 ${\mathbf w}$는 하이퍼플레인과 orthogonal하며 적절한 training sample 즉, 적절한 하나의  서포트 벡터를 지난다. 이때 $\cos \theta$는 다음과 같이 쉽게 정의된다.[^2]
+이제 $\cos \theta$를 벡터 ${\bf x}_{\rm svr} - {\bf x} _{\rm svl}$와 $\mathbf{w}$가 이루는 각이라고 생각하자. 이때 $\mathbf{w}$는 하이퍼플레인과 orthogonal하며 적절한 training sample 즉, 적절한 하나의  서포트 벡터를 지난다. 이때 $\cos \theta$는 다음과 같이 쉽게 정의된다.[^2]
 
-[^2]: 벡터의 방향에 대해서 약간 갸우뚱하는 분들이 있을지 모르겠다. $\cos \theta$를 제대로 정의하기 위해서는 $-({\bf x}_{\rm svr} - {\bf x}_{\rm svl})$, $-{\mathbf w}$라고 쓰는 것이 맞을 것이다. 하지만, 둘의 닷 프로덕트를 구하면 서로 상쇄되어 아래 적은 것과 동일하다. 
+[^2]: 벡터의 방향에 대해서 약간 갸우뚱하는 분들이 있을지 모르겠다. $\cos \theta$를 제대로 정의하기 위해서는 $-({\bf x}_{\rm svr} - {\bf x}_{\rm svl})$, $- \mathbf{w}$라고 쓰는 것이 맞을 것이다. 하지만, 둘의 닷 프로덕트를 구하면 서로 상쇄되어 아래 적은 것과 동일하다. 
 
 $$\cos \theta = \dfrac{({\bf x} _ {\rm svr} - {\bf x} _ {\rm svl}) \cdot \bf w}{\Vert {\bf x} _ {\rm svr} - {\bf x} _ {\rm svl} \Vert \Vert \mathbf{w} \Vert}$$
 
@@ -178,7 +178,7 @@ $$
 F = \min_{i = 1, \dotsc, m} y_i( \mathbf{w} \cdot {\bf x} _i + b )
 $$
 
-${\mathbf w}$와 $b$로 정의되는 하이퍼플레인이 모든 트레이닝 셋을 잘 분류했다면, $f_i > 0$가 성립한다. 이 $f_i$ 중 가장 작은 값이 functional margin이다. 그리고 두 번째로 서로 다른 하이퍼플레인 중에서 가장 큰 $F$를 지니는 하이퍼플레인이 최적이 하이퍼플레인이다. 
+$\mathbf{w}$와 $b$로 정의되는 하이퍼플레인이 모든 트레이닝 셋을 잘 분류했다면, $f_i > 0$가 성립한다. 이 $f_i$ 중 가장 작은 값이 functional margin이다. 그리고 두 번째로 서로 다른 하이퍼플레인 중에서 가장 큰 $F$를 지니는 하이퍼플레인이 최적이 하이퍼플레인이다. 
 
 1. $F$를 얻기 위한 과정에서 최소화 로직이 들어간다. 즉, 해당 하이퍼플레인과 가장 가깝게 위치한 관측치를 얻어내는 과정 
 2. 이렇게 얻어낸 $F$들을 서로 다른 하이퍼플레인들 사이에 비교하고, 가장 큰 $F$를 주는 하이퍼플레인을 채택한다. 
@@ -236,8 +236,8 @@ $$
 
 $$
 \begin{aligned}
-\nabla_\mathbf{w} {\mathcal L}({\mathbf w}, b, {\boldsymbol \alpha}) =& \mathbf{w} - \sum_{i}^{m} \alpha_i y_i x_i = 0 \\\\
-\nabla_{b} {\mathcal L}({\mathbf w}, b, {\boldsymbol \alpha}) =& - \sum_{i}^{m} \alpha_i y_i = 0
+\nabla_\mathbf{w} {\mathcal L}( {\mathbf{w}, b, {\boldsymbol \alpha}) =& \mathbf{w} - \sum_{i}^{m} \alpha_i y_i x_i = 0 \\\\
+\nabla_{b} {\mathcal L}({\mathbf{w}, b, {\boldsymbol \alpha}) =& - \sum_{i}^{m} \alpha_i y_i = 0
 \end{aligned}
 $$
 
@@ -357,6 +357,6 @@ $$
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzI5MjQ5NTEsLTYyNzkwOTYzLC00OT
-U4NTMyMjFdfQ==
+eyJoaXN0b3J5IjpbMTA3MzUxMjQ3OSwtNjI3OTA5NjMsLTQ5NT
+g1MzIyMV19
 -->
